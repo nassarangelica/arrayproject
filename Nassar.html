@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Demonstration</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            margin: 20px;
+            background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148901163.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .columns {
+            display: flex;
+            justify-content: space-between;
+        }
+        .column {
+            width: 30%;
+        }
+        .container {
+            border: 2px solid #FF8A08;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #E178C5;
+        }
+        .container:hover{
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px #A0937D; 
+        }
+        .code-block {
+            background-color: #FFB22C;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .result {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="background-image">
+    <h1>Array Methods Demonstration</h1>
+
+    <div class="columns">
+        <div class="column">
+            <div class="container">
+                <h2>1. Array length</h2>
+                <div class="code-block">
+                    <pre>const arr = [1, 2, 3, 4, 5];
+console.log(arr.length);</pre>
+                </div>
+                <div class="result">
+                    Length of the array: <span id="length-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>2. Array toString()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.toString());</pre>
+                </div>
+                <div class="result">
+                    Array as a string: <span id="toString-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>3. Array at()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.at(2));</pre>
+                </div>
+                <div class="result">
+                    Element at index 2: <span id="at-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>4. Array join()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.join('-'));</pre>
+                </div>
+                <div class="result">
+                    Joined array: <span id="join-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>5. Array pop()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.pop());</pre>
+                </div>
+                <div class="result">
+                    Popped element: <span id="pop-result"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="container">
+                <h2>6. Array push()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.push(6));</pre>
+                </div>
+                <div class="result">
+                    New length after push: <span id="push-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>7. Array shift()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.shift());</pre>
+                </div>
+                <div class="result">
+                    Shifted element: <span id="shift-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>8. Array unshift()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.unshift(0));</pre>
+                </div>
+                <div class="result">
+                    New length after unshift: <span id="unshift-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>9. Array delete()</h2>
+                <div class="code-block">
+                    <pre>delete arr[0];
+console.log(arr);</pre>
+                </div>
+                <div class="result">
+                    Array after delete: <span id="delete-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>10. Array concat()</h2>
+                <div class="code-block">
+                    <pre>const arr2 = [6, 7, 8];
+console.log(arr.concat(arr2));</pre>
+                </div>
+                <div class="result">
+                    Concatenated array: <span id="concat-result"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="container">
+                <h2>11. Array copyWithin()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.copyWithin(0, 2));</pre>
+                </div>
+                <div class="result">
+                    Array after copyWithin: <span id="copyWithin-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>12. Array flat()</h2>
+                <div class="code-block">
+                    <pre>const nestedArr = [1, [2, 3], [4, 5]];
+console.log(nestedArr.flat());</pre>
+                </div>
+                <div class="result">
+                    Flattened array: <span id="flat-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>13. Array splice()</h2>
+                <div class="code-block">
+                    <pre>arr.splice(2, 0, 10, 11);
+console.log(arr);</pre>
+                </div>
+                <div class="result">
+                    Array after splice: <span id="splice-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>14. Array toSpliced()</h2>
+                <div class="code-block">
+                    <pre>const newArr = arr.toSpliced(2, 1, 20, 21);
+console.log(newArr);</pre>
+                </div>
+                <div class="result">
+                    New array after toSpliced: <span id="toSpliced-result"></span>
+                </div>
+            </div>
+
+            <div class="container">
+                <h2>15. Array slice()</h2>
+                <div class="code-block">
+                    <pre>console.log(arr.slice(1, 4));</pre>
+                </div>
+                <div class="result">
+                    Sliced array: <span id="slice-result"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+        
+        document.getElementById('length-result').textContent = arr.length;
+        document.getElementById('toString-result').textContent = arr.toString();
+        document.getElementById('at-result').textContent = arr.at(2);
+        document.getElementById('join-result').textContent = arr.join('-');
+        document.getElementById('pop-result').textContent = arr.pop();
+        document.getElementById('push-result').textContent = arr.push(6);
+        document.getElementById('shift-result').textContent = arr.shift();
+        document.getElementById('unshift-result').textContent = arr.unshift(0);
+        delete arr[0];
+        document.getElementById('delete-result').textContent = arr;
+        
+        const arr2 = [6, 7, 8];
+        document.getElementById('concat-result').textContent = arr.concat(arr2);
+        
+        document.getElementById('copyWithin-result').textContent = arr.copyWithin(0, 2);
+        
+        const nestedArr = [1, [2, 3], [4, 5]];
+        document.getElementById('flat-result').textContent = nestedArr.flat();
+        
+        arr.splice(2, 0, 10, 11);
+        document.getElementById('splice-result').textContent = arr;
+        
+        const newArr = arr.toSpliced(2, 1, 20, 21);
+        document.getElementById('toSpliced-result').textContent = newArr;
+        
+        document.getElementById('slice-result').textContent = arr.slice(1, 4);
+    </script>
+</body>
+</html>
